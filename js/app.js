@@ -1,5 +1,6 @@
 import Timer from "./timer.js";
 import TypingComplete from "./complete.js";
+import Text from "./text.js";
 
 const $wrapper = document.querySelector(".wrapper");
 const $textToType = $wrapper.querySelector(".wrapper__text");
@@ -9,6 +10,8 @@ const $btn = $wrapper.querySelector(".wrapper__btn");
 
 $textArea.setAttribute("placeholder", "start typing");
 
+$textToType.innerHTML = `${Text.randomPara()}`;
+
 const spellCheck = (_) => {
   const inputText = $textArea.value.split("");
   const text = $textToType.innerText.split("");
@@ -16,9 +19,12 @@ const spellCheck = (_) => {
   inputText.forEach((letter, i) => {
     if (letter === text[i]) {
       $textArea.style.color = "green";
-      console.log(letter);
+      $textArea.style.opacity = "1";
     } else {
       $textArea.style.color = "red";
+      $textArea.style.borderColor = "red";
+      $textArea.style.borderWidth = "10px";
+      $textArea.style.opacity = "0.8";
     }
   });
   TypingComplete.isCompleted(inputText, text);
@@ -38,6 +44,7 @@ const resetApp = (_) => {
   Timer.countReset();
   $textArea.removeAttribute("disabled");
   $textArea.value = "";
+  $textToType.innerHTML = `${Text.randomPara()}`;
 };
 
 const init = (_) => {
