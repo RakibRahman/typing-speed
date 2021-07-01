@@ -3,38 +3,114 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: gray;
-  font-size: 1.5rem;
+html {
+  font-size: 62.5%;
 }
+body {
+  color: whitesmoke;
+  background: linear-gradient(
+    to right,
+    rgb(15, 32, 39),
+    rgb(32, 58, 67),
+    rgb(44, 83, 100)
+  );
+
+  background-size: 400% 400%;
+  animation: backgroundChange 5s ease infinite;
+}
+@keyframes backgroundChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .wrapper {
   display: grid;
+  margin: 0 auto;
   place-content: center;
   text-align: center;
   height: 100vh;
+  padding: 0 4rem;
+  @media screen and (min-width: 768px) {
+    width: 900px;
+  }
+  &__intro {
+    h1 {
+      font-size: 3rem;
+      margin: 10px 0;
+      line-height: 1.65;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 2rem;
+      margin-left: 2rem;
+    }
+  }
   &__text {
     padding: 1rem 2rem;
     font-size: 2.5rem;
     color: black;
-    background-color: whitesmoke;
+    background: #bb432c;
+    color: white;
     display: inline-block;
     border-radius: 10px;
+    margin: 2rem 0;
+    height: 132px;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    letter-spacing: 0.8px;
   }
 
   textarea {
+    margin: 0rem 0 2rem;
+    outline: none;
     padding: 1rem 2rem;
     resize: none;
-    font-size: 2rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    border: 5px solid blue;
+    font-size: 2.5rem;
+    border: 5px solid whitesmoke;
+    background: transparent;
+    caret-color: #c33764;
+    border-radius: 5px;
   }
   &__countdown {
-    background-color: red;
+    width: 20%;
+    background: chocolate;
+    color: whitesmoke;
     padding: 1rem 2rem;
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    border-radius: 1rem;
+    pointer-events: none;
+  }
+  &__btn {
+    width: 80px;
+    padding: 0.5rem 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    & img {
+      width: 30px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 }
