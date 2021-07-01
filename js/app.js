@@ -8,7 +8,13 @@ const $textArea = $wrapper.querySelector("#inputText");
 const $countdown = $wrapper.querySelector(".wrapper__countdown");
 const $btn = $wrapper.querySelector(".wrapper__btn");
 
-$textArea.setAttribute("placeholder", "start typing");
+export const sound = {
+  win: new Audio("./../media/win.mp3"),
+  error: new Audio("./../../media/error.mp3"),
+  click: new Audio("./../media/click.mp3"),
+};
+
+$textArea.setAttribute("placeholder", "Start typing...");
 
 $textToType.innerHTML = `${Text.randomPara()}`;
 
@@ -18,24 +24,26 @@ const spellCheck = (_) => {
 
   inputText.forEach((letter, i) => {
     if (letter === text[i]) {
-      $textArea.style.color = "green";
+      $textArea.style.color = "whitesmoke";
       $textArea.style.opacity = "1";
     } else {
       $textArea.style.color = "red";
       $textArea.style.borderColor = "red";
       $textArea.style.borderWidth = "10px";
       $textArea.style.opacity = "0.8";
+      sound.error.play();
     }
   });
   TypingComplete.isCompleted(inputText, text);
 };
 
 const startClock = (_) => {
-  let inputTextLength = $textArea.value.length;
+  const givenText = $textToType.innerText.length - 1;
+  const inputTextLength = $textArea.value.length;
   if (inputTextLength === 0) {
     Timer.countStart();
   }
-  if ($textArea.value.length === $textToType.innerText.length - 1) {
+  if (inputTextLength === givenText) {
     Timer.countPause();
   }
 };
@@ -45,6 +53,7 @@ const resetApp = (_) => {
   $textArea.removeAttribute("disabled");
   $textArea.value = "";
   $textToType.innerHTML = `${Text.randomPara()}`;
+  sound.click.play();
 };
 
 const init = (_) => {
