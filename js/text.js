@@ -1,11 +1,20 @@
 const Text = ((_) => {
   const para = [
-    "Firefighters what meditation truck stuck ramps srirachaliveedge. Green godard hella fingerstache williamsburg. Palo batch quinoa belly coloring. Everyday mug offal cliche. Roof youll party readymadebraid truck great i people. Dont af. Tousled.",
-    "Leggings air knock. Hashtag literally. Greatest shaman take mumblecore mustache food. Palo seitan bad viral freegan bottle wolf swag satisfied. Celiac everyday put copper thundercats yr yr work fill austin. Actually.",
-    "Snackwave occupy locavore shaman af. What mumblecore direct. Scenester mumblecore.As godard disrupt austin put tote tofu.",
+    "To know sorrow is not terrifying. What is terrifying is to know you can't go back to happiness you could have.",
+
+    "Whatever you lose, you'll find it again. But what you throw away you'll never get back.",
+    "If you don’t like your destiny, don’t accept it. Instead, have the courage to change it the way you want it to be.",
+
     "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+
     "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
+
     "When to use iterative development? You should use iterative development only on projects that you want to succeed.",
+
+    "Religion, ideology, resources, land, spite, love or just because… No matter how pathetic the reason, it’s enough to start war. War will never cease to exist… reasons can be thought up after the fact… Human nature pursues strife.",
+
+    "Thinking you’re no-good and worthless is the worst thing you can do",
+    "Don’t give up, there’s no shame in falling down! True shame is to not stand up again!",
   ];
   const randomPara = (_) => {
     const pick = Math.floor(Math.random() * para.length);

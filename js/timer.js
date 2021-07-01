@@ -27,7 +27,7 @@ const Timer = ((_) => {
     clearInterval(timer);
   };
   const countReset = (_) => {
-    setInterval(timer);
+    clearInterval(timer);
     milliseconds = 0;
     $countdown.innerHTML = "00: 00: 00";
   };
