@@ -56,18 +56,24 @@ body {
 
 .wrapper__text {
   padding: 1rem 2rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: black;
   background: #bb432c;
   color: white;
   display: inline-block;
   border-radius: 10px;
   margin: 2rem 0;
-  height: 132px;
   text-align: center;
   display: grid;
   place-content: center;
   letter-spacing: 0.8px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper__text {
+    font-size: 2.5rem;
+    height: 132px;
+  }
 }
 
 .wrapper textarea {
@@ -83,7 +89,7 @@ body {
 }
 
 .wrapper__countdown {
-  width: 20%;
+  width: 100%;
   background: chocolate;
   color: whitesmoke;
   padding: 1rem 2rem;
@@ -94,6 +100,12 @@ body {
   font-size: 2rem;
   border-radius: 1rem;
   pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper__countdown {
+    width: 20%;
+  }
 }
 
 .wrapper__btn {
@@ -117,6 +129,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper__info {
+    flex-direction: row;
+  }
 }
 /*# sourceMappingURL=style.css.map */
