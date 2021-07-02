@@ -13,7 +13,8 @@ const Timer = ((_) => {
     timer = setInterval(() => {
       milliseconds += 10;
       let clock = new Date(milliseconds);
-      let currentTime = stopwatch[0] + ":" + stopwatch[1] + ":" + stopwatch[2];
+      let currentTime =
+        stopwatch[0] + ": " + stopwatch[1] + ": " + stopwatch[2];
       $countdown.innerHTML = currentTime;
       stopwatch[0] = ("0" + clock.getUTCMinutes()).slice(-2);
       stopwatch[1] = ("0" + clock.getUTCSeconds()).slice(-2);
