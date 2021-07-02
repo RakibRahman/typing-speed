@@ -1,10 +1,7 @@
-```
- milliseconds += 10;
-let dateTimer = new Date(milliseconds);
-watch.innerHTML =
-('0'+dateTimer.getUTCHours()).slice(-2) + ':' +
-('0'+dateTimer.getUTCMinutes()).slice(-2) + ':' +
-('0'+dateTimer.getUTCSeconds()).slice(-2) + ':' +
-('0'+dateTimer.getUTCMilliseconds()).slice(-3,-1);
-}, 10);
-```
+# Typing Speed Test
+
+- Check how fast you can type and get your WPM,time taken to complete and how many words you have typed.
+
+# Screenshot:
+
+![ss](img/ss.gif)
