@@ -28,6 +28,7 @@ body {
 }
 
 .wrapper {
+  transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
   display: grid;
   margin: 0 auto;
   place-content: center;
@@ -137,5 +138,43 @@ body {
   .wrapper__info {
     flex-direction: row;
   }
+}
+
+.modal {
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  position: relative;
+  width: 35rem;
+  margin: 150px auto;
+  border-radius: 5px;
+  background: #bb432c;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.modal h1,
+.modal p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal h3 {
+  margin-bottom: 1rem;
+}
+
+.modal h3 span {
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+}
+
+.modal button {
+  position: absolute;
+  right: 10px;
+  padding: 0.5rem;
+  background: transparent;
+  color: whitesmoke;
+  border: 0;
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
