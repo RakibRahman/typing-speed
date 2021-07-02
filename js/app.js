@@ -5,8 +5,9 @@ import Text from "./text.js";
 const $wrapper = document.querySelector(".wrapper");
 const $textToType = $wrapper.querySelector(".wrapper__text");
 const $textArea = $wrapper.querySelector("#inputText");
-const $countdown = $wrapper.querySelector(".wrapper__countdown");
 const $btn = $wrapper.querySelector(".wrapper__btn");
+const $modal = document.querySelector(".modal");
+const $close = document.querySelector(".close");
 
 export const sound = {
   win: new Audio("./../media/win.mp3"),
@@ -15,7 +16,6 @@ export const sound = {
 };
 
 $textArea.setAttribute("placeholder", "Start typing...");
-
 $textToType.innerHTML = `${Text.randomPara()}`;
 
 const spellCheck = (_) => {
@@ -40,13 +40,21 @@ const resetApp = (_) => {
   $textArea.value = "";
   $textArea.style.borderColor = "whitesmoke";
   $textArea.style.borderWidth = "5px";
+  $wrapper.style.backgroundColor = "transparent";
   $textToType.innerHTML = `${Text.randomPara()}`;
+
   sound.click.play();
 };
-
+const closeModal = () => {
+  $modal.style.display = "none";
+  $wrapper.style.display = "grid";
+  resetApp();
+};
 const init = (_) => {
   $textArea.addEventListener("keydown", startClock, false);
   $textArea.addEventListener("keyup", spellCheck, false);
   $btn.addEventListener("click", resetApp, false);
+  $modal.style.display = "none";
+  $close.addEventListener("click", closeModal, false);
 };
 init();
