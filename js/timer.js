@@ -4,6 +4,7 @@ const Timer = ((_) => {
 
   let milliseconds = 0;
   let timer;
+  let stopwatch = [0, 0, 0]; // minute/seconds/milliseconds
 
   const countStart = (_) => {
     $countdown.style.backgroundColor = "lime";
@@ -12,15 +13,11 @@ const Timer = ((_) => {
     timer = setInterval(() => {
       milliseconds += 10;
       let clock = new Date(milliseconds);
-
-      $countdown.innerHTML = `   
-     <span> ${("0" + clock.getUTCMinutes()).slice(-2)}:</span><span> ${(
-        "0" + clock.getUTCSeconds()
-      ).slice(-2)}:</span><span>${("0" + clock.getUTCMilliseconds()).slice(
-        -3,
-        -1
-      )} </span>
-      `;
+      let currentTime = stopwatch[0] + ":" + stopwatch[1] + ":" + stopwatch[2];
+      $countdown.innerHTML = currentTime;
+      stopwatch[0] = ("0" + clock.getUTCMinutes()).slice(-2);
+      stopwatch[1] = ("0" + clock.getUTCSeconds()).slice(-2);
+      stopwatch[2] = ("0" + clock.getUTCMilliseconds()).slice(-3, -1);
     }, 10);
   };
   const countPause = (_) => {
