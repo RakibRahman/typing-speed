@@ -48,7 +48,7 @@ const TypingStatus = (() => {
     return min + secToMinute.toFixed(2);
   };
   const wpmCalculate = (timeTaken) => {
-    const wordsTyped = $textToType.innerText.length;
+    const wordsTyped = $textToType.innerText.length / 5;
 
     return Math.floor(wordsTyped / timeTaken);
   };
