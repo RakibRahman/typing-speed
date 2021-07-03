@@ -7,7 +7,7 @@ const Timer = ((_) => {
   let stopwatch = [0, 0, 0]; // minute/seconds/milliseconds
 
   const countStart = (_) => {
-    $countdown.style.backgroundColor = "lime";
+    $countdown.style.backgroundColor = "#bb432c";
     clearInterval(timer);
 
     timer = setInterval(() => {
