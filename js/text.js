@@ -15,7 +15,7 @@ const Text = ((_) => {
     "Religion, ideology, resources, land, spite, love or just because… No matter how pathetic the reason, it's enough to start war. War will never cease to exist… reasons can be thought up after the fact… Human nature pursues strife.",
 
     "Thinking you're no-good and worthless is the worst thing you can do.",
-    "Don't give up, there’s no shame in falling down! True shame is to not stand up again!",
+    "Don't give up, there's no shame in falling down! True shame is to not stand up again!",
     "People's lives don't end when they die. It ends when they lose faith.",
     "Life is not a game of luck. If you wanna win, work hard.",
     "Because people don't have wings, they look for ways to fly.",
